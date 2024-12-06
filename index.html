@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spencer's Music</title>
+    <link rel="icon" href="https://cdn.spencers.zone/images/SLFavicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes backgroundChange {
+            0% { background-color: #f4f4f4; }
+            12.5% { background-color: #ffebee; }
+            25% { background-color: #ffe0b2; }
+            37.5% { background-color: #fff9c4; }
+            50% { background-color: #e8f5e9; }
+            62.5% { background-color: #e3f2fd; }
+            75% { background-color: #ede7f6; }
+            87.5% { background-color: #fce4ec; }
+            100% { background-color: #f4f4f4; }
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            animation: backgroundChange 10s infinite;
+            color: #333;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4em;
+            color: #2c3e50;
+            margin-top: 50px;
+        }
+
+        .buttons-container {
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .artist-button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 5px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .artist-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spencer's Audio Emporium</h1>
+    </header>
+    <main>
+        <div class="buttons-container">
+            <button class="artist-button" onclick="location.href='/artist1'">Artist1</button>
+            <button class="artist-button" onclick="location.href='/artist2'">Artist2</button>
+            <button class="artist-button" onclick="location.href='/artist3'">Artist3</button>
+            <button class="artist-button" onclick="location.href='/artist4'">Artist4</button>
+            <button class="artist-button" onclick="location.href='/artist5'">Artist5</button>
+        </div>
+    </main>
+
+    <script>
+        // Alternate tab title every 2.5 seconds
+        const titles = ["Spencer's Music", "spencers.zone"];
+        let titleIndex = 0;
+
+        setInterval(() => {
+            document.title = titles[titleIndex];
+            titleIndex = (titleIndex + 1) % titles.length;
+        }, 1000);
+    </script>
+</body>
+</html>
